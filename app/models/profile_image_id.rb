@@ -1,0 +1,2 @@
+class ProfileImageId < ApplicationRecord
+end
