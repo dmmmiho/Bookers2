@@ -1,0 +1,32 @@
+<h1>User info</h1>
+
+<div>
+  
+  <h3><%= @user.name %></h3>
+  <h3><%= @user.introduction %></h3>
+</div>
+
+<h1>New book</h1>
+
+
+<%= f.text_field :title %>
+
+<%= f.text_area :body %>
+
+<%= f.submit "Create Book" %>
+
+<% end %>
+
+<h1>Books</h1>
+
+<% @books.each do |book| %>
+
+
+
+<%= link_to book_path(book.id) do %>
+
+<%= book.title %>
+<% end %>
+
+<p><%= book.body %></p>
+<% end %>
