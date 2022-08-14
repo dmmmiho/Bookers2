@@ -1,3 +1,21 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-image
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <h2>Users</h2>
+            <thead>
+                <th>image</th>
+                <th>name</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <% @users.each do |user| %>
+                <tr>
+                    <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg" %></td>
+                    <th><%= user.name %></th>
+                    <th><%= link_to "show", user_path(user.id) %></th>
+                </tr>
+                <% end %>
+            </tbody>
+        </div>
+    </div>
+</div>
